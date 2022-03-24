@@ -4,7 +4,8 @@ FMT = "%H:%M"
 PARSE = (f"00:00", FMT)
 
 class WorkingTime:
-    def __init__(self, worker, company,position):
+    def __init__(self, worker,company,position):
+        
         self.worker = worker
         self.position=position
         self.company = company
@@ -68,7 +69,7 @@ class WorkingTime:
     def display_hours_week(self):
         """ Returns a string of the hours for the week """
         rtn_str = "\n"
-        rtn_str += f"\n\tName       ::  {self.worker}\n\tCompany    ::  {self.company}\n\tposition    ::  {self.position}"
+        rtn_str += f"\n\tName       ::  {self.worker}\n\tCompany    ::  {self.company}\n\tposition   ::  {self.position}"
         line = "-" * 50
         total_line = '-'*26
         rtn_str += f"\n{line}"
@@ -88,9 +89,13 @@ wt = WorkingTime('Khandoker','Desk-net','Data Automation and analysis')
 # Set hours
 wt.set_start_hour("monday", "0930")
 wt.set_end_hour("monday", "1700")
-wt.set_start_and_end("TUESDAY", "0945", "1730")
-wt.set_start_and_end("wednesday", "0845", "1400")
-wt.set_start_and_end("THUrsday", "", "")
+print('Tuesday starttime and endtime')
+wt.set_start_and_end("TUESDAY",str(input()), str(input()))
+print('Wednesday starttime and endtime')
+wt.set_start_and_end("wednesday", str(input()), str(input()))
+print('Thursday starttime and endtime')
+wt.set_start_and_end("THUrsday",str(input()), str(input()))
+print('Friday starttime and endtime')
 wt.set_start_and_end("FrIDAY", "", "")
 
 # # get hours
