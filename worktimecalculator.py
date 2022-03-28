@@ -106,6 +106,7 @@ print(wt.get_start_and_end("Friday"))
 # calculate day hours
 print(wt.calculate_day_hours(wt.get_start_and_end("monday")))
 
+
 # calculate week hours
 week = wt.calculate_week_hours()
 print(week)
@@ -116,3 +117,6 @@ print(wt.display_hours_day("Tuesday", tues_hours))
 
 # print week hours total
 print(wt.display_hours_week())
+d=wt.display_hours_week()
+with open('file.txt', 'w') as f:
+    print(d, file=f)
