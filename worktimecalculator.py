@@ -118,5 +118,30 @@ print(wt.display_hours_day("Tuesday", tues_hours))
 # print week hours total
 print(wt.display_hours_week())
 d=wt.display_hours_week()
-with open('file.txt', 'w') as f:
+
+d=wt.display_hours_week()
+with open('week1.txt', 'w') as f:
     print(d, file=f)
+with open('week2.txt', 'w') as f:
+       print(d, file=f)
+
+with open('week3.txt', 'w') as f:
+    print(d, file=f)
+
+
+with open('week4.txt', 'w') as f:
+    print(d, file=f)
+
+
+
+
+from subprocess import Popen
+filenames = ['week1.txt', 'week2.txt', 'week3.txt', 'week4.txt']
+fbatch = open('batch.bat','w')
+str ="type "
+for f in filenames:
+    str+= f + " "
+fbatch.write(str + " > file4results.txt")
+fbatch.close()
+p = Popen("batch.bat", cwd=r"D:\exclusion list for social media")
+stdout, stderr = p.communicate()
